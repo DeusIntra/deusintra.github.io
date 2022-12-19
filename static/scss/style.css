@@ -107,6 +107,10 @@ ul {
   font-size: 48px;
 }
 
+.font72 {
+  font-size: 72px;
+}
+
 .description {
   line-height: 1.6rem;
   font-weight: 300;
@@ -142,14 +146,13 @@ ul {
   padding: 11px 22px;
   overflow: hidden;
 }
-.nav-items-wrapper .nav-item:hover {
+.nav-items-wrapper .nav-item:hover, .nav-items-wrapper .nav-item.current {
   background-color: #1d8fbd;
   color: #ffffff;
 }
 
 .cover {
-  background-image: url("../img/index/hero.jpg");
-  height: 100vh;
+  height: 1080px;
   background-repeat: no-repeat;
   background-position: center center;
   background-size: cover;
@@ -165,6 +168,12 @@ ul {
 .cover::before {
   background-color: rgba(0, 0, 0, 0.4);
   z-index: inherit;
+}
+.cover.index {
+  background-image: url("../img/index/hero.jpg");
+}
+.cover.katalog {
+  background-image: url("../img/katalog/hero.jpg");
 }
 .cover .wrapper {
   padding-top: 36px;

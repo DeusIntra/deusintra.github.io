@@ -115,6 +115,10 @@ ul {
     font-size: 48px;
 }
 
+.font72 {
+    font-size: 72px;
+}
+
 .description {
     line-height: $description-line-height;
     font-weight: 300;
@@ -151,7 +155,7 @@ ul {
             overflow: hidden;
         }
 
-        &:hover {
+        &:hover, &.current {
             background-color: #1d8fbd;
             color: #ffffff;
         }
@@ -166,14 +170,21 @@ ul {
         z-index: inherit;
     }
 
-    background-image: url('../img/index/hero.jpg');
-    height: 100vh;
+    height: 1080px;
     background-repeat: no-repeat;
     background-position: center center;
     background-size: cover;
     position: relative;
     z-index: -1;
+    
+    &.index {
+        background-image: url('../img/index/hero.jpg');
+    }
 
+    &.katalog {
+        background-image: url('../img/katalog/hero.jpg');
+    }
+    
     .wrapper {
         padding-top: 36px;
         max-width: 520px;
