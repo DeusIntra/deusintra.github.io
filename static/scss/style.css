@@ -29,14 +29,6 @@ ul {
   padding-left: 20px;
 }
 
-.fixed {
-  position: fixed;
-}
-.fixed.logo, .fixed:has(img) {
-  top: 20px;
-  left: 20px;
-}
-
 .white {
   color: white;
 }
@@ -49,12 +41,68 @@ ul {
   font-weight: 600;
 }
 
+.light {
+  font-weight: 300;
+}
+
 .uppercase {
   text-transform: uppercase;
 }
 
 .text-center {
   text-align: center;
+}
+
+.flex {
+  display: flex;
+}
+.flex.center {
+  justify-content: center;
+  align-items: center;
+}
+.flex.justify-center {
+  justify-content: center;
+}
+.flex.align-center {
+  align-items: center;
+}
+.flex.column {
+  flex-direction: column;
+  height: 100%;
+}
+.flex.gap1 {
+  gap: 1em;
+}
+.flex.gap15 {
+  gap: 1.5em;
+}
+.flex.wrap {
+  flex-wrap: wrap;
+}
+
+.maxw-360 {
+  max-width: 360px;
+}
+
+.maxw-420 {
+  max-width: 420px;
+}
+
+.maxw-540 {
+  max-width: 540px;
+}
+
+.w100 {
+  width: 100%;
+}
+
+.h100 {
+  height: 100%;
+}
+
+.mx-auto {
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .container {
@@ -109,6 +157,14 @@ ul {
 
 .font72 {
   font-size: 72px;
+}
+
+.fixed {
+  position: fixed;
+}
+.fixed.logo, .fixed:has(img) {
+  top: 20px;
+  left: 20px;
 }
 
 .description {
@@ -174,6 +230,10 @@ ul {
 }
 .cover.katalog {
   background-image: url("../img/katalog/hero.jpg");
+}
+.cover.katalog .container {
+  padding: 120px;
+  gap: 40px;
 }
 .cover .wrapper {
   padding-top: 36px;
@@ -504,10 +564,60 @@ ul {
   -o-object-fit: cover;
      object-fit: cover;
 }
-.about-hero div, .about-hero img {
+.about-hero div,
+.about-hero img {
   margin: 0 20px;
 }
 
+.katalog-btn {
+  position: relative;
+  overflow: hidden;
+  background-color: #3853f0;
+  padding: 20px 60px;
+  margin-top: 20px;
+}
+.katalog-btn::after {
+  content: "";
+  position: absolute;
+  height: 350%;
+  width: 200%;
+  top: 0;
+  left: -130%;
+  background: rgba(255, 255, 255, 0.8);
+  border-radius: 100%;
+  transform: scale(0);
+  z-index: 20;
+  -webkit-animation-name: ripple;
+          animation-name: ripple;
+  -webkit-animation-duration: 6000ms;
+          animation-duration: 6000ms;
+  -webkit-animation-timing-function: linear;
+          animation-timing-function: linear;
+  -webkit-animation-iteration-count: infinite;
+          animation-iteration-count: infinite;
+}
+
+@-webkit-keyframes ripple {
+  20% {
+    opacity: 0;
+    transform: scale(2.5);
+  }
+  100% {
+    opacity: 0;
+    transform: scale(2.5);
+  }
+}
+
+@keyframes ripple {
+  20% {
+    opacity: 0;
+    transform: scale(2.5);
+  }
+  100% {
+    opacity: 0;
+    transform: scale(2.5);
+  }
+}
 .footer {
   padding-top: 75px;
   padding-bottom: 75px;

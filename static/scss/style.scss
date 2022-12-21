@@ -36,16 +36,6 @@ ul {
     padding-left: 20px;
 }
 
-.fixed {
-    position: fixed;
-
-    &.logo,
-    &:has(img) {
-        top: 20px;
-        left: 20px;
-    }
-}
-
 .white {
     color: white;
 }
@@ -58,12 +48,75 @@ ul {
     font-weight: 600;
 }
 
+.light {
+    font-weight: 300;
+}
+
 .uppercase {
     text-transform: uppercase;
 }
 
 .text-center {
     text-align: center;
+}
+
+.flex {
+    display: flex;
+
+    &.center {
+        justify-content: center;
+        align-items: center;
+    }
+
+    &.justify-center {
+        justify-content: center;
+    }
+
+    &.align-center {
+        align-items: center;
+    }
+
+    &.column {
+        flex-direction: column;
+        height: 100%;
+    }
+
+    &.gap1 {
+        gap: 1em;
+    }
+    
+    &.gap15 {
+        gap: 1.5em
+    }
+    
+    &.wrap {
+        flex-wrap: wrap;
+    }
+}
+
+.maxw-360 {
+    max-width: 360px;
+}
+
+.maxw-420 {
+    max-width: 420px;
+}
+
+.maxw-540 {
+    max-width: 540px;
+}
+
+.w100 {
+    width: 100%;
+}
+
+.h100 {
+    height: 100%;
+}
+
+.mx-auto {
+    margin-left: auto;
+    margin-right: auto;
 }
 
 .container {
@@ -119,6 +172,16 @@ ul {
     font-size: 72px;
 }
 
+.fixed {
+    position: fixed;
+
+    &.logo,
+    &:has(img) {
+        top: 20px;
+        left: 20px;
+    }
+}
+
 .description {
     line-height: $description-line-height;
     font-weight: 300;
@@ -155,7 +218,8 @@ ul {
             overflow: hidden;
         }
 
-        &:hover, &.current {
+        &:hover,
+        &.current {
             background-color: #1d8fbd;
             color: #ffffff;
         }
@@ -176,15 +240,20 @@ ul {
     background-size: cover;
     position: relative;
     z-index: -1;
-    
+
     &.index {
         background-image: url('../img/index/hero.jpg');
     }
 
     &.katalog {
         background-image: url('../img/katalog/hero.jpg');
+
+        .container {
+            padding: 120px;
+            gap: 40px;
+        }
     }
-    
+
     .wrapper {
         padding-top: 36px;
         max-width: 520px;
@@ -434,10 +503,10 @@ ul {
             position: relative;
         }
     }
-    
+
     .arrow--left {
         left: 20px;
-        
+
         svg {
             transform: rotate(180deg);
             left: 5px;
@@ -460,7 +529,7 @@ ul {
         padding: 15px;
         display: flex;
         justify-content: center;
-    
+
         .bullet {
             width: 20px;
             height: 20px;
@@ -470,7 +539,7 @@ ul {
             margin: 0 10px;
             cursor: pointer;
         }
-    
+
         .current {
             background-color: white;
         }
@@ -524,8 +593,46 @@ ul {
         object-fit: cover;
     }
 
-    div, img {
+    div,
+    img {
         margin: 0 20px;
+    }
+}
+
+.katalog-btn {
+    position: relative;
+    overflow: hidden;
+    background-color: $emphasis-color;
+    padding: 20px 60px;
+    margin-top: 20px;
+
+    &::after {
+        content: "";
+        position: absolute;
+        height: 350%;
+        width: 200%;
+        top: 0;
+        left: -130%;
+        background: rgba(255, 255, 255, 0.8);
+        border-radius: 100%;
+        transform: scale(0);
+        z-index: 20;
+        animation-name: ripple;
+        animation-duration: 6000ms;
+        animation-timing-function: linear;
+        animation-iteration-count: infinite;
+    }
+}
+
+@keyframes ripple {
+    20% {
+        opacity: 0;
+        transform: scale(2.5);
+    }
+
+    100% {
+        opacity: 0;
+        transform: scale(2.5);
     }
 }
 
