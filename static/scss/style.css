@@ -652,13 +652,14 @@ ul {
      object-fit: cover;
 }
 .katalog-cards-wrapper .katalog-card .text-wrapper {
-  margin-bottom: 48px;
+  margin-bottom: 96px;
 }
 .katalog-cards-wrapper .katalog-card .text-wrapper div {
   margin-top: 20px;
 }
 .katalog-cards-wrapper .katalog-card .price s {
   color: #bdbdbd;
+  font-size: 14px;
 }
 .katalog-cards-wrapper .katalog-card .btn-wrapper {
   position: absolute;
